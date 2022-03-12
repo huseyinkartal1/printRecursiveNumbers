@@ -59,7 +59,7 @@ public class Main {
         //0,1,4,6,1,7,9,1,0,10
         //0,0,1,1,1,4,7,9,10
 
-        
+        System.out.println(da);
 
 
 

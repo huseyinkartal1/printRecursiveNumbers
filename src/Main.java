@@ -20,7 +20,7 @@ public class Main {
 
         while (right>0)
         {
-
+            System.out.println();
 
         
 

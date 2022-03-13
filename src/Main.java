@@ -9,9 +9,10 @@ public class Main {
         Scanner input2 = new Scanner(System.in);
         int right = 3;
         String arrInput = "";
-        int size = 0;
+        int size = 0,count;
         int[] arr;
-        int[] copyArr;
+        int[] emptyArr;
+
 
         System.out.println("what size array do you want to creat?");
         if (!input.hasNextInt()) {
@@ -31,7 +32,7 @@ public class Main {
         arr = new int[size];
         right = 3;
 
-        System.out.println("type the numbers of array: ");
+        System.out.println("except 0, type the numbers of array: ");
             arrInput = input.nextLine();
         if (!input.hasNextInt()) {
             while (!input.hasNextInt() && right > 0) {
@@ -50,34 +51,50 @@ public class Main {
             }
         }
 
-        for (int element:arr)
-        {
-            System.out.print("numbers of arry: "+element);
-        }
-
-
         //0,1,4,6,1,7,9,1,0,10
         //0,0,1,1,1,4,7,9,10
 
-        System.out.println(da);
+        System.out.println();
+
+        emptyArr=new int[arr.length];
 
 
 
         Arrays.sort(arr);
 
-        for (int a=0;a< arr.length;a++)
+        for(int x=0;x< arr.length;x++)
         {
+            count=0;
+
+            for (int y=0;y< arr.length;y++)
+            {
+                if(arr[x]==arr[y]&&x!=y)
+                {
+                    if(isCheck(emptyArr,arr[x])) {
+                        emptyArr[x++] = arr[x];
+                    }
+                    count++;
+                }
+            }
+            System.out.println(emptyArr[x]+" "+(count+1)+" times written");
 
         }
 
+        for (int element:emptyArr)
+        {
+            if (element>0) {
+                System.out.print(element);
+            }
+        }
 
-
-
-
-        //size=Integer.parseInt(arrInput);
-
-        //System.out.println(size);
-
-
+    }
+    static boolean isCheck(int [] arr,int number)
+    {
+        for (int element:arr)
+        {
+            if (element!=number)
+                return true;
+        }
+        return false;
     }
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int right = 3;
         String arrSize = "";
@@ -32,11 +32,14 @@ public class Main {
         right = 3;
 
         System.out.println("type the numbers of array");
-        
+
       /* amac: kullanici harf girirse rakam girene kadar 3 hak tanimak,
          3 de harf ise sistemden atmak
          kullanici arr boyutunu ornegin; 3 secerse, dizi elemanlarini yazarken ilk ikisini harf girse dahi
          yinede 3 tane rakam girebilmesine imkan taninmali*/
+        // array elemanlarini girerken harf girersem while den sonraki kisim 2 kez donuyor satir 45. yazarsam
+        //sorun olmuyor.
+        // while den once nesneyi tekrar kullanici girdisine esitleyerek ilk girdiden bagimsiz hale mi getirmemiz gerek?
 
 
         // arrElements = input.nextLine();
